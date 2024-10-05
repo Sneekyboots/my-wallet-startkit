@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import WalletModal from './components/WalletModal';
+import './App.css'; // You can add global styles here
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
+  const [showWalletModal, setShowWalletModal] = useState(false);
+
+  const toggleWalletModal = () => {
+    setShowWalletModal(!showWalletModal);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App flex items-center justify-center h-screen bg-gray-100">
+      <h1 className="text-3xl font-bold mb-4">My Custom Wallet</h1>
+      <button
+        onClick={toggleWalletModal}
+        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+      >
+        {showWalletModal ? 'Close Wallet' : 'Open Wallet'}
+      </button>
+      {showWalletModal && <WalletModal onClose={toggleWalletModal} />}
     </div>
   );
 }

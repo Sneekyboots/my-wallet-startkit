@@ -1,0 +1,248 @@
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease-in-out; /* Smooth transition */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #1f1f1f; /* Dark background */
+  color: white;
+  border-radius: 12px;
+  padding: 15px 25px; /* Less padding to make it shorter */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7); /* Deep shadow */
+  width: 600px; /* Increased width */
+  max-width: 90%;
+  text-align: center;
+  opacity: 0; /* Hidden at start */
+  transform: translateY(30px); /* Start slightly below */
+  animation: fadeInModal 0.4s ease forwards; /* Fade-in animation */
+}
+
+/* Close Button */
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: color 0.3s;
+}
+
+.close-button:hover {
+  color: #ff4d4d; /* Hover color for close button */
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 22px;
+  margin-bottom: 8px;
+  letter-spacing: 1.1px; /* Elegant letter spacing */
+}
+
+/* Account Balance Display */
+.account-balance {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.account-usd {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #b0b0b0; /* Subtle USD balance color */
+}
+
+/* Connect Wallet Button */
+.connect-button {
+  display: block;
+  margin: 0 auto 15px;
+  background-image: linear-gradient(to right, #4CAF50, #3ca742); /* Gradient */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.connect-button i {
+  margin-right: 8px;
+}
+
+.connect-button:hover {
+  transform: scale(1.05); /* Hover scale */
+  background-image: linear-gradient(to right, #45a049, #3e9342); /* Darker green */
+}
+
+/* Action Buttons */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  background-color: #007bff; /* Primary color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  flex: 1 1 100px;
+  margin: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.action-button i {
+  margin-right: 8px;
+}
+
+.action-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-3px); /* Lift button */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Fund Wallet Section */
+.fund-wallet {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #2b2b2b; /* Slightly darker section background */
+  border-radius: 10px; /* Rounded corners for smoother design */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow to lift the section */
+}
+
+.fund-wallet-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f2f2f2;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Input Wrapper */
+.fund-wallet-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.eth-input {
+  width: 100%;
+  padding: 12px 50px 12px 15px; /* Extra padding on the right for the ETH label */
+  border: none;
+  border-radius: 6px;
+  background-color: #3d3d3d; /* Darker background for the input field */
+  color: #fff;
+  font-size: 16px;
+  transition: background-color 0.3s, border-color 0.3s;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight inner shadow */
+}
+
+.eth-input:focus {
+  background-color: #4a4a4a; /* Slightly lighter on focus */
+  border: 2px solid #4CAF50; /* Green border on focus */
+  outline: none;
+}
+
+/* ETH Label inside input */
+.eth-label {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #3d3d3d;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Fund Button */
+.fund-button {
+  margin-top: 20px;
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.fund-button i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.fund-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: translateY(-2px); /* Lift the button slightly */
+}
+
+.fund-button:active {
+  transform: scale(0.98); /* Button shrink on click */
+}
+
+/* Transaction History */
+.transaction-title {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.transaction-history {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.transaction-item {
+  margin: 5px 0;
+  font-size: 14px;
+  background-color: #2a2a2a;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(20px); /* Start below */
+  animation: fadeInTransaction 0.4s ease forwards; /* Transaction animation */
+}
+
+/* Fade-in Animation for Modal */
+@keyframes fadeInModal {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Final position */
+  }
+}
+
+/* Fade-in Animation for Transactions */
+@keyframes fadeInTransaction {
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Move into place */
+  }
+}
